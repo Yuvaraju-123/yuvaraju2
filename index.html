@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revvlift Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="logo">Revvlift</div>
+        <a href="#" class="btn" id="scheduleButton">Schedule a Call</a>
+    </header>
+
+    <!-- Layout 1: Landing Page -->
+    <section class="container1">
+        <div class="hero">
+            <p class="subheading">For Ambitious Business Owners</p>
+            <h1><span class="highlight">10X</span> Your Profitability With End-to-End <br> Revenue Optimization</h1>
+            <p class="description">
+                Discover how Revvlift’s unique persona-based approach helps you 
+                <span class="highlight-text">skyrocket</span> traffic to your website, 
+                <span class="highlight-text">strengthen</span> funnel performance, and 
+                <span class="highlight-text">increase</span> cash flow – without wasting ad spend.
+            </p>
+            <div class="image-row">
+                <img src="https://i.ibb.co/6BMVHWP/assets-hero-1.png" alt="Hero Image 1" class="hero-image">
+                <img src="https://i.ibb.co/Bz8Zt8L/assets-hero-2.png" alt="Hero Image 2" class="hero-image">
+                <img src="https://i.ibb.co/mSS5zn5/assets-hero-3.png" alt="Hero Image 3" class="hero-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Layout 2: Persona-Funnel Mismatch -->
+    <section class="container2">
+        <h1>The <span class="highlight">Persona-Funnel Mismatch</span> In Businesses</h1>
+        <p>Most agencies have a 1-dimensional approach to growing your business.
+            They treat traffic and 'conversion' as two different activities - optimizing for one or the other.
+            Without optimizing for your buyer’s journey - the thread connecting cold traffic to repeat purchase.</p>
+        <div class="problems-container">
+            <div class="problems-text">This leads to<br><strong>5 problems:</strong></div>
+            <ul class="problems-list">
+                <li>High ad spend, low ROI</li>
+                <li>Poor page conversion rate</li>
+                <li>Missed keyword potential</li>
+                <li>1-time buyers, not loyal fans</li>
+                <li>Unmet profit targets</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Layout 3: Revvlift Explanation -->
+    <section class="container3">
+        <h1>Revvlift Was Built To</h1>
+        <h2><span class="highlight">Resolve The Persona-Funnel Mismatch</span></h2>
+        <h1>In Your Business</h1>
+        <p>Revvlift is a <strong>Revenue Optimization Agency</strong> that drives higher sales and profits (not traffic or conversions alone!),
+            through a Buyer-First approach to growth.</p>
+        
+        <div class="features">
+            <div class="feature">
+                <img src="https://i.ibb.co/5sGTdMh/image-1.png" alt="Feature 1">
+                <p><strong>Align your growth efforts with your ideal buyer personas</strong></p>
+            </div>
+            <div class="feature">
+                <img src="https://i.ibb.co/4gy30Pt/image2.png" alt="Feature 2">
+                <p><strong>Spend and rank intelligently based on what buyers care about</strong></p>
+            </div>
+            <div class="feature">
+                <img src="https://i.ibb.co/gy223tf/image3.png" alt="Feature 3">
+                <p><strong>Use strategy, not tactics and tricks to drive both sales and retention</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <div class="overlay hidden" id="overlay"></div>
+    <div class="application-container hidden" id="applicationForm">
+        <button class="close-btn" id="closeButton">&times;</button>
+        <h1 class="form-title">Submit Your Application</h1>
+        <form id="submitForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Select a Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="question">Any Questions</label>
+                <textarea id="question" name="question" placeholder="Enter your question here..." rows="4"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <!-- Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const scheduleButton = document.getElementById('scheduleButton');
+            const applicationForm = document.getElementById('applicationForm');
+            const overlay = document.getElementById('overlay');
+            const closeButton = document.getElementById('closeButton');
+
+            // Show form on button click
+            scheduleButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                applicationForm.classList.remove('hidden');
+                overlay.classList.remove('hidden');
+            });
+
+            // Close form when clicking on overlay or close button
+            overlay.addEventListener('click', () => {
+                applicationForm.classList.add('hidden');
+                overlay.classList.add('hidden');
+            });
+
+            closeButton.addEventListener('click', () => {
+                applicationForm.classList.add('hidden');
+                overlay.classList.add('hidden');
+            });
+
+            // Submit form handler
+            document.getElementById('submitForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const date = document.getElementById('date').value;
+                const question = document.getElementById('question').value;
+
+                alert(`Your application has been submitted!\nName: ${name}\nEmail: ${email}\nDate: ${date}\nQuestion: ${question}`);
+
+                applicationForm.classList.add('hidden');
+                overlay.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
